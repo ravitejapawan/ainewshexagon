@@ -1,0 +1,17 @@
+apscheduler==3.11.0
+bs4==0.0.2
+django==4.2.16
+requests==2.32.3
+google-generativeai==0.8.4
+google-ai-generativelanguage
+google-api-core
+google-api-python-client
+google-auth
+protobuf
+pydantic
+tqdm
+typing-extensions
+psycopg2-binary
+requests==2.32.3
+python-dotenv
+psycopg2

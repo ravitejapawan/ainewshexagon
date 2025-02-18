@@ -1,0 +1,268 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Developer - Hexagon Powered Trending News</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <style>
+    body {
+      background: linear-gradient(135deg, rgba(26,26,46,0.8), rgba(22,33,62,0.8)),
+                  url('https://via.placeholder.com/1200x800'); /* Replace with your desired background image */
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeInUp 1s ease-in-out forwards;
+      opacity: 0; /* Hidden until animation runs */
+    }
+
+    /* Navbar override */
+    .navbar-dark.bg-dark { background-color: rgba(0,0,0,0.7) !important; }
+
+    /* Profile Header */
+    .profile-header { margin-top: 80px; margin-bottom: 40px; }
+    .profile-image {
+      width: 200px; height: 200px; object-fit: cover; border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.3); box-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+    .profile-name { font-size: 28px; font-weight: bold; margin-bottom: 5px; }
+    .profile-role { font-size: 20px; margin-bottom: 10px; color: #ccc; }
+    .profile-contact { font-size: 16px; color: #aaa; }
+
+    /* Section Headings */
+    .section-title {
+      font-size: 24px; margin-top: 30px; margin-bottom: 15px;
+      text-decoration: underline; text-underline-offset: 6px;
+      text-decoration-color: #00f2ff;
+    }
+
+    /* Card-like appearance for sections */
+    .info-card {
+      background: rgba(255,255,255,0.1); border-radius: 10px; padding: 15px;
+      margin-bottom: 20px; box-shadow: 0 0 10px rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Skill stars */
+    .skill-name { font-weight: bold; }
+    .stars { color: #ffd700; margin-left: 8px; } /* Gold stars */
+  </style>
+</head>
+<body>
+  <!-- Bootstrap Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}">Hexagon News</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNav" aria-controls="navbarNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'developer' %}">Developer</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Profile Header -->
+  <div class="container profile-header fade-in">
+    <div class="row align-items-center">
+      <div class="col-md-4 text-center">
+        <!-- Developer Photo -->
+        <img src="{% static 'news/bala.jpg' %}" alt="Developer Photo" class="profile-image mb-3" />
+      </div>
+      <div class="col-md-8">
+        <div class="profile-name">NALLAGANCHU BALA SAI DURGA RAVITEJA</div>
+        <div class="profile-role">Senior Associate Consultant</div>
+        <div class="profile-contact">
+          <p>Tenali</p>
+          <p>+91 77995933389</p>
+        </div>
+        <p>
+          Having 4+ years of experience in .NET Core Full stack, demonstrating proficiency in developing scalable and robust applications. Good knowledge and experience in .Net Core, MVC, MS SQL Server, Microsoft Dynamic CRM, JavaScript, ReactJS, Python, Flask, Fortify code scan. Excellent code reviews and debugging skills. Experienced in writing database objects (Stored Procedures, Functions, and Triggers) and working with Agile Methodology.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Personal Information -->
+  <div class="container fade-in">
+    <div class="info-card">
+      <h2 class="section-title">Personal Information</h2>
+      <p><strong>Address:</strong> Andhra Pradesh, Tenali, 522201</p>
+      <p><strong>Date of Birth:</strong> 28/09/1998</p>
+      <p><strong>Nationality:</strong> Indian</p>
+      <p><strong>Driving License:</strong> NA</p>
+      <p><strong>Hobbies:</strong> </p>
+    </div>
+  </div>
+
+  <!-- Social Profiles -->
+  <div class="container fade-in">
+    <div class="info-card">
+      <h2 class="section-title">Social Profiles</h2>
+      <p><strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/bala-sai-durga-raviteja-nallaganchu-74ba7b167/" target="_blank" class="text-decoration-none text-white">
+          https://www.linkedin.com/in/bala-sai-durga-raviteja-nallaganchu-74ba7b167/
+        </a>
+      </p>
+      <p><strong>Other:</strong> [Other Social Profile Info]</p>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div class="container fade-in">
+    <div class="info-card">
+      <h2 class="section-title">Skills</h2>
+      <p><span class="skill-name">.NET Core:</span> <span class="stars">★★★★★</span></p>
+      <p><span class="skill-name">React:</span> <span class="stars">★★★★☆</span></p>
+      <p><span class="skill-name">SQL:</span> <span class="stars">★★★★★</span></p>
+      <p><span class="skill-name">JavaScript:</span> <span class="stars">★★★★★</span></p>
+      <p><span class="skill-name">Python:</span> <span class="stars">★★★★★</span></p>
+      <p><span class="skill-name">Flask:</span> <span class="stars">★★★★☆</span></p>
+      <p><span class="skill-name">Machine Learning:</span> <span class="stars">★★★★☆</span></p>
+      <p><span class="skill-name">Django:</span> <span class="stars">★★★★☆</span></p>
+    </div>
+  </div>
+
+  <!-- Work Experience -->
+  <div class="container fade-in">
+    <div class="info-card">
+      <h2 class="section-title">Work Experience</h2>
+      <p>
+        <strong>November 2020 – August 2024</strong><br />
+        Associate Consultant at INFOSYS, Hyderabad
+      </p>
+      <ul>
+        <li>Worked on bank applications (Unity, DDS) built using .Net Core and React with C# and JavaScript.</li>
+        <li>Implemented and updated application modules under the direction of Senior Developers.</li>
+        <li>Developed the web application ICN using Python Flask.</li>
+        <li>Created and optimized MySQL stored procedures and functions for backend operations.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="container fade-in">
+    <div class="info-card">
+      <h2 class="section-title">Education</h2>
+      <p>
+        <strong>April 2016 – April 2020</strong><br />
+        Vignan's Lara Institute Of Technology &amp; Science, Guntūr (B.Tech)
+      </p>
+      <ul>
+        <li>CGPA: 7.6</li>
+        <li>Awarded for Project Expo conducted by The Hindu.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Extra-Curricular Activities -->
+  <div class="container fade-in">
+    <div class="info-card">
+      <h2 class="section-title">Extra-Curricular Activities</h2>
+      <p>
+        <strong>April 2018 – June 2019</strong><br />
+        Played for college Kabaddi team in Guntur.
+      </p>
+      <p>
+        Developed teamwork, dedication, and self-improvement skills through sports.
+      </p>
+    </div>
+  </div>
+
+  <!-- Courses -->
+  <div class="container fade-in">
+    <div class="info-card">
+      <h2 class="section-title">Courses</h2>
+      <ul>
+        <li><strong>June 2021</strong> – .Net Certified Developer, Infosys</li>
+        <li><strong>January 2022 – April 2022</strong> – JavaScript Certified Developer, Infosys</li>
+        <li><strong>January 2021</strong> – Infosys Certified SQL Developer, Infosys</li>
+        <li><strong>June 2022 – December 2022</strong> – Python Certified Developer, Infosys/Coursera</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <div class="container fade-in">
+    <div class="info-card">
+      <h2 class="section-title">Projects</h2>
+      <p>
+        <strong>Project Expo, Guntur (February 2020 – April 2020)</strong><br />
+        Helmet and Triple Ride Detection<br />
+        <em>Detected riders not wearing helmets or riding with more than two persons.</em><br />
+        <strong>Technologies:</strong> Python, Machine Learning, Computer Vision
+      </p>
+      <hr />
+      <p>
+        <strong>Hindu Expo, Guntur (June 2019 – November 2019)</strong><br />
+        Face-Recognition Attendance System<br />
+        <em>Automated attendance by detecting student faces.</em><br />
+        <strong>Technologies:</strong> Python, Computer Vision, SQL
+      </p>
+      <hr />
+      <p>
+        <strong>Educator, Tenali (January 2020 – April 2020)</strong><br />
+        Served as an Educator at Hexagon Institute for Python. Mentored students on final-year projects, enhancing personal skills and knowledge sharing.
+      </p>
+    </div>
+  </div>
+
+  <!-- Upload Option (Visible only for Superuser) -->
+{% if user.is_superuser %}
+<div class="container fade-in mt-4">
+  <div class="info-card">
+    <h2 class="section-title">Upload Your File</h2>
+    {% if message %}
+      <div class="alert alert-info" role="alert">{{ message }}</div>
+    {% endif %}
+    <form action="{% url 'developer' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="fileUpload" class="form-label">Select File:</label>
+        <input class="form-control" type="file" id="fileUpload" name="file">
+      </div>
+      <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+  </div>
+</div>
+{% endif %}
+
+<!-- Link for Superuser to View Uploaded Files -->
+{% if user.is_superuser %}
+<div class="container fade-in mt-4">
+  <div class="info-card">
+    <h2 class="section-title">Superuser: View Uploaded Files</h2>
+    <a class="btn btn-warning" href="{% url 'view_files' %}">View Files</a>
+  </div>
+</div>
+{% endif %}
+
+
+  <!-- Bootstrap JS (optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
